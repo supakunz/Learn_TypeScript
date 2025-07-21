@@ -1,0 +1,10 @@
+{
+  "dependencies": {
+    "nodemon": "^3.1.10",
+    "tsx": "^4.20.3"
+  },
+  "scripts": {
+    "start": "tsx src/app2.ts",
+    "dev": "tsx --watch src/app2.ts"
+  }
+}

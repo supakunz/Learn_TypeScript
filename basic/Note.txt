@@ -1,0 +1,32 @@
+tsconfig.json --> ตั้งค่ากระบวนการทำงานของ TypeScript 
+-- ตัวสำคัญ --
+1."target": "es2016" --> compiler TypeScript to JavaScript es2016 / version ที่ค้องการ
+2."rootDir": "./" --> กำหนดโฟรเดอร์ที่เก็บไฟล์ TypeScript
+3."outDir":"./dist/" --> กำหนดโฟรเดอร์ที่เก็บไฟล์ JavaScriptScript
+4."include":["src"] --> กำหนดขอบเขตไฟล์ที่จะทำการ compile
+
+// ** คำสั้ง ** 
+tsc --> compile ts to js
+tsc -w --> compile realtime (watch mode)
+
+
+* tsconfig.json: การตั้งค่าใช้งาน TypeScript (References / 1)
+- compilerOptions.target ตั้งค่าเป้าหมายที่จะ Compiler .js ออกมารูปแบบใด เช่น es6 es2023
+- compilerOptions.module กำหนด Module System ที่จะใช้งาน เช่น commonjs es6 es2022
+- compilerOptions.lib กำหนด Built-in API ที่จะใช้งาน เช่น es6 dom
+- compilerOptions.moduleResolution กำหนดรูปแบบ Module ที่จะใช้งาน เช่น node16 classic
+- compilerOptions.outDir ตั้งค่า Output Directory เมื่อทำการ Build
+- compilerOptions.rootDir ตั้งค่า Root Directory ของโปรเจกต์
+- compilerOptions.paths กำหนด Alias สำหรับ Import Module (มีประโยชน์สำหรับโปรเจกต์ขนาดใหญ่)
+- compilerOptions.sourceMap เปิดการใช้ Source Map (แนะนำ false เพราะช่วยปิดการค้นดู Source Code)
+- include กำหนดรายชื่อไฟล์หรือโฟลเดอร์ที่จะทำการ Compile (แนะนำ ["src/**/*"])
+- exclude กำหนดรายชื่อไฟล์หรือโฟลเดอร์ที่จะไม่ทำการ Compile (แนะนำ ["node_modules", "dist"])
+
+- compilerOptions.esModuleInterop กำหนดให้ CommonJS ทำงานเหมือน ES Module (แนะนำ true)
+- compilerOptions.skipLibCheck ข้ามการตรวจสอบ Type ของไฟล์ในโฟลเดอร์ node_modules (แนะนำ true เพื่อเพิ่มความเร็วในการ Compile)
+- compilerOptions.resolveJsonModule กำหนดให้ TypeScript สามารถ Import ไฟล์ JSON ได้ (แนะนำ true)
+- compilerOptions.strict ตั้งค่าการใช้งาน Strict Mode (แนะนำ true)
+- compilerOptions.noImplicitAny ปิดการใช้งาน Implicit any (แนะนำกับบางโปรเจกต์ให้เป็น true)
+- compilerOptions.strictNullChecks ตั้งค่าตรวจสอบข้อมูลที่อาจจะเป็น Null (แนะนำ true)
+- compilerOptions.noUnusedLocals ห้ามมี Variable ที่ไม่ใช้งาน (แนะนำ true)
+- compilerOptions.noUnusedParameters ห้ามมี Parameters ที่ไม่ใช้งาน (แนะนำ true)
